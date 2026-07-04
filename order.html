@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Order Roblox Studio scripting services from vz.services."
+    />
+    <title>Заказ - vz.services</title>
+    <link rel="icon" href="./assets/avatar.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Russo+One&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient-scene" aria-hidden="true">
+      <canvas id="fx-canvas"></canvas>
+      <div class="avatar-orbit-stage" id="avatar-orbit-stage"></div>
+      <div class="aurora aurora-one"></div>
+      <div class="aurora aurora-two"></div>
+      <div class="aurora aurora-three"></div>
+      <div class="edge-glow edge-glow-left"></div>
+      <div class="edge-glow edge-glow-right"></div>
+      <div class="side-energy side-energy-left"></div>
+      <div class="side-energy side-energy-right"></div>
+      <div class="bottom-flare bottom-flare-left"></div>
+      <div class="bottom-flare bottom-flare-right"></div>
+      <div class="light-beam beam-one"></div>
+      <div class="light-beam beam-two"></div>
+      <div class="light-beam beam-three"></div>
+    </div>
+
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="vz.services home">
+          <span class="brand-mark">
+            <img src="./assets/avatar.webp" alt="" />
+          </span>
+          <span class="brand-name brand-glitch" data-text="services">services</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="./index.html#services" data-i18n="navServices">Услуги</a>
+          <a href="./index.html#packages" data-i18n="navPackages">Пакеты</a>
+          <a href="./order.html" data-i18n="navOrder">Заказ</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="language-switch" aria-label="Language selector">
+            <button class="lang-btn active" type="button" data-lang="ru" aria-pressed="true">
+              RU
+            </button>
+            <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">
+              EN
+            </button>
+          </div>
+          <a class="icon-link" href="./index.html" aria-label="Home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m12 19-7-7 7-7" />
+              <path d="M19 12H5" />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="order-page" id="top">
+        <section class="order-hero section-band">
+          <div class="order-hero-copy">
+            <p class="eyebrow">Заказ скрипта</p>
+            <h1>Расскажи, что нужно сделать</h1>
+            <p>
+              Опиши механику, сроки, бюджет и контакты. Заявка уйдет мне в Discord
+              одним красивым сообщением.
+            </p>
+          </div>
+          <div class="order-summary">
+            <span>01</span>
+            <strong>Brief first</strong>
+            <p>Чем точнее описание, тем быстрее я пойму объем и смогу ответить.</p>
+          </div>
+        </section>
+
+        <form class="order-form section-band" id="order-form">
+          <section class="form-block">
+            <div class="form-block-heading">
+              <p class="eyebrow">Услуга</p>
+              <h2>Что тебе нужно?</h2>
+            </div>
+
+            <div class="order-options" role="radiogroup" aria-label="Service type">
+              <label class="order-option">
+                <input type="radio" name="service" value="Mini Script" checked />
+                <span>
+                  <strong>Mini Script</strong>
+                  <small>простая механика или небольшой скрипт</small>
+                </span>
+              </label>
+              <label class="order-option">
+                <input type="radio" name="service" value="Game System" />
+                <span>
+                  <strong>Game System</strong>
+                  <small>полная система: сервер, клиент, UI</small>
+                </span>
+              </label>
+              <label class="order-option">
+                <input type="radio" name="service" value="Project Support" />
+                <span>
+                  <strong>Project Support</strong>
+                  <small>фиксы, улучшения, поддержка проекта</small>
+                </span>
+              </label>
+              <label class="order-option">
+                <input type="radio" name="service" value="Other / Custom" />
+                <span>
+                  <strong>Custom</strong>
+                  <small>другая задача под Roblox Studio</small>
+                </span>
+              </label>
+            </div>
+          </section>
+
+          <section class="form-block">
+            <div class="form-block-heading">
+              <p class="eyebrow">Контакты</p>
+              <h2>Куда ответить?</h2>
+            </div>
+
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Имя / ник</span>
+                <input name="contactName" type="text" maxlength="80" placeholder="vzork" />
+              </label>
+              <label class="form-field">
+                <span>Discord</span>
+                <input name="discord" type="text" maxlength="80" placeholder="@username" />
+              </label>
+              <label class="form-field">
+                <span>Telegram</span>
+                <input name="telegram" type="text" maxlength="80" placeholder="@username" />
+              </label>
+              <label class="form-field">
+                <span>Email</span>
+                <input name="email" type="email" maxlength="120" placeholder="mail@example.com" />
+              </label>
+            </div>
+          </section>
+
+          <section class="form-block">
+            <div class="form-block-heading">
+              <p class="eyebrow">Проект</p>
+              <h2>Детали заказа</h2>
+            </div>
+
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Название проекта</span>
+                <input name="projectName" type="text" maxlength="120" placeholder="Simulator / Tycoon / RP..." />
+              </label>
+              <label class="form-field">
+                <span>Стадия проекта</span>
+                <select name="projectStage">
+                  <option value="Идея">Идея</option>
+                  <option value="Уже есть place">Уже есть place</option>
+                  <option value="Есть готовая игра">Есть готовая игра</option>
+                  <option value="Нужны фиксы">Нужны фиксы</option>
+                </select>
+              </label>
+              <label class="form-field">
+                <span>Бюджет</span>
+                <select name="budget" required>
+                  <option value="">Выбери бюджет</option>
+                  <option value="До 500 Robux">До 500 Robux</option>
+                  <option value="500-1500 Robux">500-1500 Robux</option>
+                  <option value="1500-5000 Robux">1500-5000 Robux</option>
+                  <option value="5000+ Robux">5000+ Robux</option>
+                  <option value="Обсудить">Обсудить</option>
+                </select>
+              </label>
+              <label class="form-field">
+                <span>Срок</span>
+                <select name="deadline">
+                  <option value="Не срочно">Не срочно</option>
+                  <option value="1-2 дня">1-2 дня</option>
+                  <option value="3-7 дней">3-7 дней</option>
+                  <option value="Неделя+">Неделя+</option>
+                  <option value="Обсудить">Обсудить</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="check-grid" aria-label="Work priorities">
+              <label><input type="checkbox" name="priorities" value="ServerScriptService" /> ServerScriptService</label>
+              <label><input type="checkbox" name="priorities" value="UI / StarterGui" /> UI / StarterGui</label>
+              <label><input type="checkbox" name="priorities" value="DataStore" /> DataStore</label>
+              <label><input type="checkbox" name="priorities" value="Shop / Products" /> Shop / Products</label>
+              <label><input type="checkbox" name="priorities" value="Quest system" /> Quest system</label>
+              <label><input type="checkbox" name="priorities" value="Bug fixes" /> Bug fixes</label>
+            </div>
+
+            <label class="form-field wide">
+              <span>Описание</span>
+              <textarea
+                name="description"
+                rows="7"
+                maxlength="1800"
+                required
+                placeholder="Опиши механику: что игрок делает, что должно происходить, какие кнопки/UI нужны, где хранить данные..."
+              ></textarea>
+            </label>
+
+            <label class="form-field wide">
+              <span>Дополнительные детали</span>
+              <textarea
+                name="details"
+                rows="4"
+                maxlength="1200"
+                placeholder="Ссылки на place, что уже есть, какие ошибки, какие ограничения, что важно не сломать..."
+              ></textarea>
+            </label>
+
+            <label class="form-field wide">
+              <span>Референсы / ссылки</span>
+              <input name="references" type="text" maxlength="260" placeholder="YouTube, Roblox game, Google Drive, картинки..." />
+            </label>
+          </section>
+
+          <div class="order-submit-row">
+            <p class="order-note">
+              Минимум: выбери услугу, бюджет, оставь один контакт и описание.
+            </p>
+            <button class="order-submit" type="submit">
+              <span>Отправить заказ</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 2 11 13" />
+                <path d="m22 2-7 20-4-9-9-4Z" />
+              </svg>
+            </button>
+          </div>
+
+          <p class="order-status" id="order-status" role="status" aria-live="polite"></p>
+        </form>
+      </main>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./assets/vendor/three/three.module.js",
+          "three/addons/": "./assets/vendor/three/addons/"
+        }
+      }
+    </script>
+    <script src="./script.js"></script>
+    <script src="./order.js"></script>
+    <script type="module" src="./avatar-model.js"></script>
+  </body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="vz.services - Roblox Studio scripting services."
+    />
+    <title>vz.services - Roblox Studio Scripting</title>
+    <link rel="icon" href="./assets/avatar.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Russo+One&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient-scene" aria-hidden="true">
+      <canvas id="fx-canvas"></canvas>
+      <div class="avatar-orbit-stage" id="avatar-orbit-stage"></div>
+      <div class="aurora aurora-one"></div>
+      <div class="aurora aurora-two"></div>
+      <div class="aurora aurora-three"></div>
+      <div class="edge-glow edge-glow-left"></div>
+      <div class="edge-glow edge-glow-right"></div>
+      <div class="side-energy side-energy-left"></div>
+      <div class="side-energy side-energy-right"></div>
+      <div class="bottom-flare bottom-flare-left"></div>
+      <div class="bottom-flare bottom-flare-right"></div>
+      <div class="light-beam beam-one"></div>
+      <div class="light-beam beam-two"></div>
+      <div class="light-beam beam-three"></div>
+    </div>
+
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="vz.services home">
+          <span class="brand-mark">
+            <img src="./assets/avatar.webp" alt="" />
+          </span>
+          <span class="brand-name brand-glitch" data-text="services">services</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#services" data-i18n="navServices">Услуги</a>
+          <a href="#packages" data-i18n="navPackages">Пакеты</a>
+          <a href="./order.html" data-i18n="navOrder">Заказ</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="language-switch" aria-label="Language selector">
+            <button class="lang-btn active" type="button" data-lang="ru" aria-pressed="true">
+              RU
+            </button>
+            <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">
+              EN
+            </button>
+          </div>
+          <a class="icon-link" href="./order.html" aria-label="Order">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero section-band">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="heroBadge">Roblox Studio · Luau scripting</p>
+            <h1 data-i18n="heroTitle">Скрипты и игровые системы для Roblox Studio</h1>
+            <p class="hero-lead" data-i18n="heroLead">
+              Создаю чистую игровую логику, UI-системы, магазины, квесты, экономики и
+              механики под твой проект.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-btn" href="#services">
+                <span data-i18n="heroPrimary">Смотреть услуги</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </a>
+              <a class="ghost-btn" href="#services" data-i18n="heroSecondary">Смотреть услуги</a>
+            </div>
+            <div class="hero-stats" aria-label="Service highlights">
+              <div>
+                <strong data-i18n="statOneTitle">Luau</strong>
+                <span data-i18n="statOneText">чистый код</span>
+              </div>
+              <div>
+                <strong data-i18n="statTwoTitle">UI + Systems</strong>
+                <span data-i18n="statTwoText">под ключ</span>
+              </div>
+              <div>
+                <strong data-i18n="statThreeTitle">Studio-ready</strong>
+                <span data-i18n="statThreeText">готово к вставке</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-panel" aria-label="Roblox scripting preview">
+            <div class="terminal-window">
+              <div class="terminal-top">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <pre><code><span class="code-muted">-- vz.services</span>
+local Marketplace = require(script.Services.Marketplace)
+local PlayerData = require(script.Modules.PlayerData)
+
+Marketplace:CreateProduct({
+  name = "Premium Tools",
+  reward = function(player)
+    PlayerData:AddCoins(player, 2500)
+    player:SetAttribute("VIP", true)
+  end
+})</code></pre>
+            </div>
+
+            <div class="project-stack">
+              <div class="stack-card">
+                <span class="stack-dot"></span>
+                <div>
+                  <strong>ServerScriptService</strong>
+                  <p data-i18n="stackServer">безопасная серверная логика</p>
+                </div>
+              </div>
+              <div class="stack-card">
+                <span class="stack-dot"></span>
+                <div>
+                  <strong>ReplicatedStorage</strong>
+                  <p data-i18n="stackShared">модули и RemoteEvents</p>
+                </div>
+              </div>
+              <div class="stack-card">
+                <span class="stack-dot"></span>
+                <div>
+                  <strong>StarterGui</strong>
+                  <p data-i18n="stackUi">интерактивные интерфейсы</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="services-section" id="services">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="servicesBadge">Что можно заказать</p>
+            <h2 data-i18n="servicesTitle">Услуги скриптера</h2>
+            <p data-i18n="servicesLead">
+              Основа сайта уже готова под магазин услуг: дальше добавим реальные кейсы,
+              цены, отзывы и контакты.
+            </p>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 7h16" />
+                  <path d="M7 4v16" />
+                  <path d="M17 4v16" />
+                  <path d="M4 17h16" />
+                </svg>
+              </div>
+              <h3 data-i18n="serviceOneTitle">Игровые системы</h3>
+              <p data-i18n="serviceOneText">
+                Магазины, инвентари, квесты, награды, лидерборды, прокачка и внутренняя
+                экономика.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 5h16v14H4z" />
+                  <path d="M8 9h8" />
+                  <path d="M8 13h5" />
+                </svg>
+              </div>
+              <h3 data-i18n="serviceTwoTitle">UI-логика</h3>
+              <p data-i18n="serviceTwoText">
+                Меню, кнопки, анимации, shop UI, daily rewards и понятная связь интерфейса
+                с сервером.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3z" />
+                  <path d="M12 12 4 7.5" />
+                  <path d="m12 12 8-4.5" />
+                  <path d="M12 12v9" />
+                </svg>
+              </div>
+              <h3 data-i18n="serviceThreeTitle">Модульная архитектура</h3>
+              <p data-i18n="serviceThreeText">
+                Аккуратная структура проекта, ModuleScripts, RemoteEvents и код, который
+                легче поддерживать.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                </svg>
+              </div>
+              <h3 data-i18n="serviceFourTitle">Доработки и фиксы</h3>
+              <p data-i18n="serviceFourText">
+                Исправление багов, оптимизация старых скриптов и подключение новых механик
+                к готовой игре.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="packages-section section-band" id="packages">
+          <div class="section-heading compact">
+            <p class="eyebrow" data-i18n="packagesBadge">Формат заказа</p>
+            <h2 data-i18n="packagesTitle">Пакеты услуг</h2>
+          </div>
+
+          <div class="package-grid">
+            <article class="package-card">
+              <p class="package-kicker" data-i18n="packageOneKicker">Старт</p>
+              <h3 data-i18n="packageOneTitle">Mini Script</h3>
+              <p class="package-price" data-i18n="packagePrice">по ТЗ</p>
+              <ul>
+                <li data-i18n="packageOneA">Одна небольшая механика</li>
+                <li data-i18n="packageOneB">Настройка в Roblox Studio</li>
+                <li data-i18n="packageOneC">Краткая инструкция</li>
+              </ul>
+            </article>
+
+            <article class="package-card featured">
+              <p class="package-kicker" data-i18n="packageTwoKicker">Популярно</p>
+              <h3 data-i18n="packageTwoTitle">Game System</h3>
+              <p class="package-price" data-i18n="packagePrice">по ТЗ</p>
+              <ul>
+                <li data-i18n="packageTwoA">Полная игровая система</li>
+                <li data-i18n="packageTwoB">Сервер + клиент + UI</li>
+                <li data-i18n="packageTwoC">Тестирование сценариев</li>
+              </ul>
+            </article>
+
+            <article class="package-card">
+              <p class="package-kicker" data-i18n="packageThreeKicker">Поддержка</p>
+              <h3 data-i18n="packageThreeTitle">Project Support</h3>
+              <p class="package-price" data-i18n="packagePrice">по ТЗ</p>
+              <ul>
+                <li data-i18n="packageThreeA">Регулярные доработки</li>
+                <li data-i18n="packageThreeB">Фиксы и оптимизация</li>
+                <li data-i18n="packageThreeC">Помощь с релизом</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="process-section section-band">
+          <div class="section-heading compact">
+            <p class="eyebrow" data-i18n="processBadge">Как работаем</p>
+            <h2 data-i18n="processTitle">Понятный процесс</h2>
+          </div>
+
+          <div class="process-list">
+            <div class="process-item">
+              <span>01</span>
+              <h3 data-i18n="processOneTitle">Бриф</h3>
+              <p data-i18n="processOneText">Разбираем идею, механику, UI и нужные ограничения.</p>
+            </div>
+            <div class="process-item">
+              <span>02</span>
+              <h3 data-i18n="processTwoTitle">Сборка</h3>
+              <p data-i18n="processTwoText">Пишу скрипты и собираю систему внутри Roblox Studio.</p>
+            </div>
+            <div class="process-item">
+              <span>03</span>
+              <h3 data-i18n="processThreeTitle">Тест</h3>
+              <p data-i18n="processThreeText">Проверяем кейсы, баги, сохранение данных и UX.</p>
+            </div>
+            <div class="process-item">
+              <span>04</span>
+              <h3 data-i18n="processFourTitle">Передача</h3>
+              <p data-i18n="processFourText">Отдаю готовый результат и объясняю, где что менять.</p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <aside class="ai-chat-widget" id="vzorkin-chat" aria-label="vzorkin AI chat">
+      <button class="chat-fab" id="chat-fab" type="button" aria-label="Open vzorkin chat">
+        <img src="./assets/vzorkin-chat-icon.svg" alt="" />
+      </button>
+
+      <section class="chat-panel" aria-labelledby="chat-title">
+        <header class="chat-header">
+          <div class="chat-avatar">
+            <img src="./assets/avatar.webp" alt="" />
+          </div>
+          <div>
+            <h2 id="chat-title">vzorkin</h2>
+            <p data-i18n="chatSubtitle">Roblox Studio helper</p>
+          </div>
+          <button class="chat-close" id="chat-close" type="button" aria-label="Close chat">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </header>
+
+        <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+
+        <form class="chat-form" id="chat-form">
+          <label class="sr-only" for="chat-input" data-i18n="chatInputLabel">Сообщение</label>
+          <textarea
+            id="chat-input"
+            maxlength="650"
+            rows="2"
+            data-placeholder-ru="Напиши простой скрипт для Roblox Studio..."
+            data-placeholder-en="Ask for a simple Roblox Studio script..."
+            placeholder="Напиши простой скрипт для Roblox Studio..."
+          ></textarea>
+          <button class="chat-send" type="submit" aria-label="Send message">
+            <img src="./assets/vzorkin-send-icon.svg" alt="" />
+          </button>
+        </form>
+      </section>
+    </aside>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./assets/vendor/three/three.module.js",
+          "three/addons/": "./assets/vendor/three/addons/"
+        }
+      }
+    </script>
+    <script src="./script.js"></script>
+    <script type="module" src="./avatar-model.js"></script>
+  </body>
+</html>
