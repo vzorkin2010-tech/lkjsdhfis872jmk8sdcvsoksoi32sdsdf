@@ -1,0 +1,10 @@
+server.mjs
+local-server.mjs
+package.json
+README.md
+.env
+.env.*
+.git
+.gitignore
+.vercel
+node_modules
